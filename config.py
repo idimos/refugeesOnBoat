@@ -1,0 +1,7 @@
+
+SCREEN_WIDTH = 720
+SCREEN_HEIGHT = 480
+FPS = 60
+
+# colors
+GRAY = (150,150,150)
