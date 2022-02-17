@@ -1,13 +1,12 @@
 from models.app import *
 
 class refugeesOnBoat(App):
+    """Main App Class"""
     def __init__(self):
         super().__init__()
 
-        Scene()
-        # Scene(bg=(255,255,0))
-
         App.scene = App.scenes[0]
+        print("refugeesOnBoat init")
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
