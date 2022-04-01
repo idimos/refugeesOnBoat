@@ -5,7 +5,8 @@ from config import *
 pygame.init()
 clock = pygame.time.Clock()
 
-screen = pygame.display.set_mode([SCREEN_WIDTH,SCREEN_HEIGHT])
+bgImg = pygame.image.load('assets/sea44.jpg').convert_alpha()
+screen = pygame.display.set_mode(bgImg.get_size())
 pygame.display.set_caption("Refugees Game")
 
 if BGMusicOnStartUp == True:
@@ -13,11 +14,11 @@ if BGMusicOnStartUp == True:
     mixer.music.play(-1)
 
 # load images
-bgImageName = os.path.join('assets','boat1.png')
-bgImage = pygame.image.load(bgImageName)
-bgImage = pygame.transform.scale(bgImage,(SCREEN_WIDTH,SCREEN_HEIGHT)).convert_alpha()
+# bgImageName = os.path.join('assets','boat1.png')
+# bgImage = pygame.image.load(bgImageName)
+# bgImage = pygame.transform.scale(bgImage,(SCREEN_WIDTH,SCREEN_HEIGHT)).convert_alpha()
 bgX = 0
-bgX2 = bgImage.get_width()
+bgX2 = bgImg.get_width()
 
 class Boat():
     def __init__(self,x,y,img):
@@ -53,7 +54,7 @@ delay = 0
 def reDrawGameWindow():
     global delay
 
-    screen.blit(bgImage, (0, 0))
+    screen.blit(bgImg, (0, 0))
     if delay+1 >=56:
         delay = 0
     delay += 1
